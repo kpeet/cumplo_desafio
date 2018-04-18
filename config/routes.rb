@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'application/index'
   get 'dolar/get_dolar_values'
   get 'dolar/get_uf_values'
+  post 'dolar/accion_a_realizar'
   root 'dolar#index'
 
-  resources :dolar
 end
