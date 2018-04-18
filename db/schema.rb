@@ -10,11 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_18_023927) do
+ActiveRecord::Schema.define(version: 2018_04_18_201556) do
 
   create_table "dolars", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "fecha_consultada"
     t.float "valor"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tipo_tmcs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "subtitulo"
+    t.string "titulo"
+    t.integer "id_tipo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

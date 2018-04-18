@@ -48,20 +48,62 @@ class Tmc < ApplicationRecord
   end
 
   def self.data_table(listaDolarValor)
+
     count=0
-    listaDolar=[]
+    listaTipo=[]
+    algo=[]
+
+
+    listaConcosas=[{tipo: {lista_valores: [:lista_valores],valor_maximo: [:valor_maximo]} , data:  {titulo: [:titulo],subtitulo: [:subtitulo], id_tipo: [:id_tipo]}}]
+
+
     if( listaDolarValor.size >= 1)
       listaDolarValor['TMCs'].each do |dolar_response|
-        dolar = Dolar.new
+
+        tmc_tipo=TipoTmc.new
+        tmc_tipo.subtitulo=dolar_response['SubTitulo']
+        tmc_tipo.titulo=dolar_response['titulo']
+        tmc_tipo.id_tipo=dolar_response['Tipo']
+        tmc_tipo.save
+
+        tmc_fecha=Tmc.new
+        tmc_fecha.fecha=dolar_response['Fecha']
+        tmc_fecha.valor=dolar_response['valor']
+        tmc_fecha.tipo=dolar_response['Tipo']
+        tmc_fecha.save
+
+
+
+        #sort_by {|elem| elem[:name]}
+        #
+        #
         #dolar.fecha_consulta = dolar_response['Fecha']
         #dolar.valor_en_peso = dolar_response['Valor']
-        listaDolar << [dolar_response['Fecha'], dolar_response['Valor'], dolar_response['Titulo'], dolar_response['SubTitulo'], dolar_response['Tipo']]
+
+        #listaDolar << {:tipo => dolar_response['Tipo'] , :fecha => dolar_response['Fecha'],:valor => dolar_response['Valor']} # :valor => dolar_response['Valor'], :titulo => dolar_response['Titulo'], :subtitulo => dolar_response['SubTitulo'], }
+        #listaTipo << { :tmc => {:tipo => dolar_response['Tipo'], :fecha => dolar_response['Fecha'] , :valor => dolar_response['Valor'],:titulo => dolar_response['Titulo'],:subtitulo => dolar_response['SubTitulo']} }# :valor => dolar_response['Valor'], :titulo => dolar_response['Titulo'], :subtitulo => dolar_response['SubTitulo'], }
+
         #listaDolar[count]=[dolar_response['Fecha'], dolar_response['Valor']]
         #count=count+1
         #dolar.save
       end
+
+      algo=[]#TipoTmc.all#joins("INNER JOIN tmcs ON tipo_tmcs.id_tipo = tmcs.tipo ").where(id_tipo: 22)
+
     end
-    @result =listaDolar
+   # @result =listaTripo.sort_by{|v,t,s| v[:titulo]}
+   #
+   #
+   #  listaAGRUPADA_porTIPO={}
+   # my_hash={}
+    #listaAGRUPADA_porTIPO = listaTipo.group_by{|tipo,valor,titulo,subtitulo| tipo[:Tipo]}
+
+   #listaAGRUPADA_porTIPO.map{|k,v| {k.gsub(" 00:00:00+00","") => v}}.reduce(:merge)
+   #listaAGRUPADA_porTIPO.map{|tipo,valor,titulo,subtitulo| {k.gsub(" 00:00:00+00","") => v}}.reduce(:merge)
+   hsh={}
+   hsh=listaTipo.group_by{|tipo, fecha, valor, titulo, subtitulo| tipo[:tipo] }.reduce(:+)
+    @result=algo
+
 
 
   end

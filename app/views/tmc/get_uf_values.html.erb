@@ -1,18 +1,35 @@
-<%= render 'head_meta' %>
-<body>
-<%= render 'header_body' %>
+<!-- Lista de Valores con Fecha -->
+<div class="col-lg-12">
 
-<div class="container">
+  <div class="form-group">
+    <label for="exampleSelect2">Example multiple select</label>
+    <table class="table ">
 
- <%= render 'form_range_date' %>
+      <thead class="thead-light">
+      <tr>
+        <th scope="col">Titulo  </th>
+        <th scope="col">Subtitulo  </th>
+        <th scope="col">Valor máximo  </th>
+      </tr>
+      </thead>
 
-  <%= render 'footer' %>
+      <tbody>
+      <% if(@result.size>=1) %>
+        <% @result.each do |tmc_data |%>
+          <tr>
+            <td><%=  tmc_data[:titulo] %></td>
+            <td><%=  tmc_data[:subtitulo] %></td>
+            <td><%=  tmc_data[:valorMax] %></td>
+            <td><button name="button" class="button">Ver Histórico</button></td>
+          </tr>
 
+
+        <% end %>
+      <%end %>
+      </tbody>
+
+    </table>
+
+
+  </div>
 </div>
-
-<script src="https://bootswatch.com/_vendor/jquery/dist/jquery.min.js"></script>
-<script src="https://bootswatch.com/_vendor/popper.js/dist/umd/popper.min.js"></script>
-<script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="https://bootswatch.com/_assets/js/custom.js"></script>
-
-</body>

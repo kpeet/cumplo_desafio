@@ -1,0 +1,2 @@
+class TipoTmc < ApplicationRecord
+end
