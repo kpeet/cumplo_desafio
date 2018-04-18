@@ -2,42 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5d65737-f487-49bb-8331-4a9eb0bdd638" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/dolar.coffee" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/tmc.coffee" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/uf.coffee" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/dolar.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/tmc.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/uf.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/controllers/dolar_controller.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/controllers/tmc_controller.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/controllers/uf_controller.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/helpers/cumplo_helper.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/helpers/dolar_helper.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/helpers/tmc_helper.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/helpers/uf_helper.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/models/tmc.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/views/dolar/accion_a_realizar.html.erb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/views/dolar/get_dolar_values.html.erb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/views/dolar/index.html.erb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/views/tmc/get_tmc_values.html.erb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/views/tmc/show_result.html.erb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/views/uf/get_uf_values.html.erb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20180418023927_create_tmcs.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/test/controllers/dolar_controller_test.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/test/controllers/tmc_controller_test.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/test/controllers/uf_controller_test.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/test/fixtures/tmcs.yml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/test/models/tmc_test.rb" />
-      <change beforePath="$PROJECT_DIR$/.idea/cumplo_desafio_tecnologia.iml" afterPath="$PROJECT_DIR$/.idea/cumplo_desafio_tecnologia.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" />
-      <change beforePath="$PROJECT_DIR$/app/models/dolar.rb" afterPath="$PROJECT_DIR$/app/models/dolar.rb" />
-      <change beforePath="$PROJECT_DIR$/app/models/uf.rb" afterPath="$PROJECT_DIR$/app/models/uf.rb" />
-      <change beforePath="$PROJECT_DIR$/config/database.yml" afterPath="$PROJECT_DIR$/config/database.yml" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -88,7 +53,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gemfile" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Gemfile" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="216">
@@ -98,11 +63,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dolar_controller.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dolar_controller.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/dolar_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="31" column="28" lean-forward="true" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
+            <state relative-caret-position="122">
+              <caret line="17" column="22" lean-forward="false" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -404,7 +369,7 @@
       <option name="presentableId" value="Default" />
       <updated>1523996336346</updated>
       <workItem from="1523996337791" duration="34562000" />
-      <workItem from="1524035943211" duration="86000" />
+      <workItem from="1524035943211" duration="325000" />
     </task>
     <task id="LOCAL-00001" summary="Commit inicial Desafio Cumplo">
       <created>1523996470055</created>
@@ -417,11 +382,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34648000" />
+    <option name="totallyTimeSpent" value="34887000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="824" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -432,7 +396,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921812" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32921812" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.60631" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23319027" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
@@ -704,14 +668,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/dolar_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="31" column="28" lean-forward="true" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20180418023927_create_tmcs.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -724,6 +680,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/dolar_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="17" column="22" lean-forward="false" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="22" />
           <folding />
         </state>
       </provider>
