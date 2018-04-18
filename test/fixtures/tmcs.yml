@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subtitulo: MyString
+  fecha: 2018-04-17
+  valor: 1.5
+  tipo: 1
+  titulo: MyString
+
+two:
+  subtitulo: MyString
+  fecha: 2018-04-17
+  valor: 1.5
+  tipo: 1
+  titulo: MyString

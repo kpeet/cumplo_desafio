@@ -15,7 +15,7 @@ default: &default
 
 development:
   <<: *default
-  database: development_db
+  database: desafio_cumplo_db
 
 
 production:

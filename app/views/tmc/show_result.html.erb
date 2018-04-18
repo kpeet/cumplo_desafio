@@ -1,0 +1,190 @@
+<head>
+  <meta charset="utf-8">
+  <title>Bootswatch: Minty</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="stylesheet" href="https://bootswatch.com/4/minty/bootstrap.css" media="screen">
+  <link rel="stylesheet" href="https://bootswatch.com/_assets/css/custom.min.css">
+  <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+
+  <style class="cp-pen-styles">
+
+
+    .table-fixed {
+      width: 100%;
+      background-color: #f3f3f3;
+    }
+    .table-fixed tbody {
+      height: 200px;
+      overflow-y: auto;
+      width: 100%;
+    }
+    .table-fixed thead, .table-fixed tbody, .table-fixed th {
+      display: block;
+    }
+    .table-fixed tbody td {
+      float: left;
+    }
+    .table-fixed thead tr th {
+      float: left;
+      border-color: #e67e22;
+    }
+  </style>
+
+</head>
+<body>
+<div class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+  <div class="container">
+    <a href="../" class="navbar-brand">Desafío Cumplo</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+
+      <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/kpeet/cumplo_desafio/" target="_blank">GitHub Proyecto</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  ACCION TMC!!!<br>
+  <%= debug @resultDB %>
+  <%= form_tag({controller: "tmc", action: "show_result" }, method: "post") do %>
+    <div class="field">
+      <input id="fecha_inicio" name="fecha_inicio" type="date" value="" /><br>
+      <input id="fecha_final" name="fecha_final" type="date" value="" /><br>
+      <%= label_tag(:q, "Search for:") %>
+      <%= text_field_tag(:q) %>
+      <%= submit_tag("Search") %>
+    </div>
+  <% end %>
+
+
+  <div class="bs-docs-section clearfix">
+    <div class="row">
+      <div class="col-lg-12">
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Tabla con Indicadores -->
+  <table class="table">
+    <thead class="thead-light">
+    <tr>
+      <th scope="col">Indicador </th>
+      <th scope="col">Rango de Fechas </th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Tmc</td>
+      <% if(!@fecha_inicio.nil? ) %>
+        <td><%= @fecha_inicio+" - "+@fecha_final%></td>
+
+      <% else %>
+        <td></td>
+      <% end %>
+
+
+
+
+    </tr>
+    </tbody>
+  </table>
+  <div class="col-lg-12">
+    <%= bar_chart @tweets_count,
+                  title: 'Top Ten Products (By Total Quantity Purchased)',
+                  colors: ['green'],
+                  library: {
+                      tooltip: {
+                          pointFormat: 'Times Bought'
+                      }
+                  } %>
+  </div>
+
+
+  <!-- Navbar
+  ================================================== -->
+
+
+  <!-- Lista de Valores con Fecha -->
+  <div class="col-lg-12">
+
+    <div class="form-group">
+      <label for="exampleSelect2">Example multiple select</label>
+      <table class="table table-fixed">
+
+        <thead class="thead-light">
+        <tr>
+          <th scope="col">Titulo  </th>
+          <th scope="col">Subtitulo  </th>
+          <th scope="col">Valor máximo  </th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <% if(@result.size>=1) %>
+          <% @result.each do |tmc_data |%>
+        <tr>
+          <td><%=  tmc_data[:titulo] %></td>
+          <td><%=  tmc_data[:subtitulo] %></td>
+          <td><%=  tmc_data[:valorMax] %></td>
+        </tr>
+
+
+          <% end %>
+        <%end %>
+        </tbody>
+
+      </table>
+
+
+    </div>
+  </div>
+
+  <!-- FIN Lista de Valores con Fecha -->
+
+
+
+  <footer id="footer">
+    <div class="row">
+      <div class="col-lg-12">
+        <ul class="list-unstyled">
+          <li class="float-lg-right"><a href="#top">Back to top</a></li>
+          <li><a href="http://blog.bootswatch.com" onclick="pageTracker._link(this.href); return false;">Blog</a></li>
+          <li><a href="https://feeds.feedburner.com/bootswatch">RSS</a></li>
+          <li><a href="https://twitter.com/bootswatch">Twitter</a></li>
+          <li><a href="https://github.com/thomaspark/bootswatch/">GitHub</a></li>
+        </ul>
+        <p>Made by <a href="http://thomaspark.co">Thomas Park</a>.</p>
+        <p>Code released under the <a href="https://github.com/thomaspark/bootswatch/blob/master/LICENSE">MIT License</a>.</p>
+        <p>Based on <a href="https://getbootstrap.com" rel="nofollow">Bootstrap</a>. Icons from <a href="http://fontawesome.io/" rel="nofollow">Font Awesome</a>. Web fonts from <a href="https://fonts.google.com/" rel="nofollow">Google</a>.</p>
+
+      </div>
+    </div>
+
+  </footer>
+
+
+</div>
+
+
+
+<script src="https://bootswatch.com/_vendor/jquery/dist/jquery.min.js"></script>
+<script src="https://bootswatch.com/_vendor/popper.js/dist/umd/popper.min.js"></script>
+<script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="https://bootswatch.com/_assets/js/custom.js"></script>
+</body>

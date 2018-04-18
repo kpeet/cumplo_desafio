@@ -1,0 +1,2 @@
+class UfController < ApplicationController
+end

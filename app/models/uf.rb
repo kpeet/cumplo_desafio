@@ -1,2 +1,3 @@
 class Uf < ApplicationRecord
+
 end
