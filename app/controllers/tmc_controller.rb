@@ -18,11 +18,13 @@ class TmcController < ApplicationController
   end
 
   def get_tmc_values
+    @titulo="TMC"
     @result=[]
 
   end
 
   def show_result
+    @titulo="TMC"
     fecha_inicio_format= params[:fecha_inicio]
     fecha_final_format= params[:fecha_final]
     #@resultDB=Tmc.get_db_value(fecha_inicio_format, fecha_final_format)

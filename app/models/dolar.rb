@@ -43,8 +43,9 @@ class Dolar < ApplicationRecord
 
     count=0
     listaDolar=[]
+    listaDola1r=[]
     listaIndices=[]
-    if(!json_list_value.empty? || json_list_value.size>=1)
+    if(!json_list_value.empty? && !json_list_value['Dolares'].empty?)
       json_list_value['Dolares'].each do |dolar_response|
         dolar = Dolar.new
         #dolar.fecha_consulta = dolar_response['Fecha']
@@ -53,10 +54,10 @@ class Dolar < ApplicationRecord
         #listaDolar[count]=[dolar_response['Fecha'], dolar_response['Valor']]
         #count=count+1
         #dolar.save
-        listaDolar=listaDolar.map{|e| e[1]}
+        listaDola1r=listaDolar.map{|e| e[1]}
 
 
-        listaIndices=[["Mínimo", listaDolar.min],["Máximo",listaDolar.max],["Promedio",promedio(listaDolar)] ]
+        listaIndices=[["Mínimo", listaDola1r.min],["Máximo",listaDola1r.max],["Promedio",promedio(listaDola1r)] ]
 
       end
     else

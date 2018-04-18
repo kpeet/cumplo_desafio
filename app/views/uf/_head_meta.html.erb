@@ -1,0 +1,40 @@
+<head>
+  <meta charset="utf-8">
+  <title>Bootswatch: Minty</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="stylesheet" href="https://bootswatch.com/4/minty/bootstrap.css" media="screen">
+  <link rel="stylesheet" href="https://bootswatch.com/_assets/css/custom.min.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+
+  <style class="cp-pen-styles">
+
+
+    .table-fixed {
+      width: 100%;
+      background-color: #f3f3f3;
+    }
+    .table-fixed tbody {
+      height: 200px;
+      overflow-y: auto;
+      width: 100%;
+    }
+    .table-fixed thead, .table-fixed tbody, .table-fixed th {
+      display: block;
+    }
+    .table-fixed tbody td {
+      float: left;
+    }
+    .table-fixed thead tr th {
+      float: left;
+      border-color: #e67e22;
+    }
+  </style>
+  <script>
+      $( ".datepicker" ).datepicker();
+  </script>
+
+</head>

@@ -1,7 +1,7 @@
 <div class="col-lg-8">
 
   <div class="form-group">
-    <label for="exampleSelect2">Valor Dolar por Fecha</label>
+    <label for="exampleSelect2">Valor UF por Fecha</label>
     <table class="table table-fixed">
       <thead class="thead-light">
       <tr>
@@ -11,11 +11,11 @@
       </thead>
       <tbody>
       <% if(@result.size>=1) %>
-        <% @result['Dolares'].each do |dolar_response|%>
+        <% @result['UFs'].each do |uf_response|%>
           <tr>
 
-            <td class="col-xs-4"><%=  dolar_response['Valor'] %> </td>
-            <td class="col-xs-4"><%= dolar_response['Fecha'] %></td>
+            <td class="col-xs-4"><%=  uf_response['Valor'] %> </td>
+            <td class="col-xs-4"><%= uf_response['Fecha'] %></td>
 
           </tr>
         <% end %>

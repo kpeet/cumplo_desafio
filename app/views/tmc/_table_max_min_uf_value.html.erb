@@ -1,0 +1,20 @@
+<table class="table">
+  <thead class="thead-light">
+  <tr>
+    <th scope="col">Indicador </th>
+    <th scope="col">Rango de Fechas </th>
+    <th scope="col">Promedio  </th>
+    <th scope="col">Máximo  </th>
+    <th scope="col">Mínimo  </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>UF</td>
+    <td><%= @fecha_inicio+" - "+@fecha_final%></td>
+    <td><%= @data_table_max_min_dolar_value[2][1]%></td>
+    <td><%= @data_table_max_min_dolar_value[1][1]%></td>
+    <td><%= @data_table_max_min_dolar_value[0][1]%></td>
+  </tr>
+  </tbody>
+</table>
