@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'dolar/get_dolar_values'
   get 'dolar/get_uf_values'
   post 'dolar/accion_a_realizar'
+  post 'tmc/show_result'
+  get 'tmc/get_tmc_values'
   root 'dolar#index'
 
 end
