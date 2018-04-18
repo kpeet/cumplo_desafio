@@ -2,17 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5d65737-f487-49bb-8331-4a9eb0bdd638" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/views/dolar/_footer.html.erb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/views/dolar/_form_range_date.html.erb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/views/dolar/_head_meta.html.erb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/views/dolar/_header_body.html.erb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/views/dolar/_table_liist_value.html.erb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/views/dolar/_table_list_dolar_value.html.erb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/views/dolar/_table_max_min_dolar_value.html.erb" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/controllers/dolar_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/dolar_controller.rb" />
+      <change beforePath="$PROJECT_DIR$/app/models/dolar.rb" afterPath="$PROJECT_DIR$/app/models/dolar.rb" />
+      <change beforePath="$PROJECT_DIR$/app/views/dolar/_form_range_date.html.erb" afterPath="$PROJECT_DIR$/app/views/dolar/_form_range_date.html.erb" />
+      <change beforePath="$PROJECT_DIR$/app/views/dolar/_table_max_min_dolar_value.html.erb" afterPath="$PROJECT_DIR$/app/views/dolar/_table_max_min_dolar_value.html.erb" />
       <change beforePath="$PROJECT_DIR$/app/views/dolar/accion_a_realizar.html.erb" afterPath="$PROJECT_DIR$/app/views/dolar/accion_a_realizar.html.erb" />
-      <change beforePath="$PROJECT_DIR$/app/views/dolar/get_dolar_values.html.erb" afterPath="$PROJECT_DIR$/app/views/dolar/get_dolar_values.html.erb" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,11 +19,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="dolar.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/dolar.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="156">
+              <caret line="49" column="55" lean-forward="true" selection-start-line="49" selection-start-column="55" selection-end-line="49" selection-end-column="55" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="dolar_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/dolar_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="29" column="37" lean-forward="false" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
+            <state relative-caret-position="345">
+              <caret line="28" column="48" lean-forward="false" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -36,8 +42,18 @@
       <file leaf-file-name="accion_a_realizar.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/dolar/accion_a_realizar.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+            <state relative-caret-position="360">
+              <caret line="24" column="89" lean-forward="true" selection-start-line="24" selection-start-column="89" selection-end-line="24" selection-end-column="89" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_table_max_min_dolar_value.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/dolar/_table_max_min_dolar_value.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -85,15 +101,12 @@
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/dolar/index.html.erb" />
         <option value="$PROJECT_DIR$/app/helpers/cumplo_helper.rb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/tmc/get_tmc_values.html.erb" />
         <option value="$PROJECT_DIR$/db/migrate/20180418014220_create_tmcs.rb" />
         <option value="$PROJECT_DIR$/app/controllers/tmc_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/tmc.rb" />
         <option value="$PROJECT_DIR$/app/views/tmc/show_result.html.erb" />
         <option value="$PROJECT_DIR$/Gemfile" />
-        <option value="$PROJECT_DIR$/app/models/dolar.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/dolar_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/dolar/_footer.html.erb" />
         <option value="$PROJECT_DIR$/app/views/dolar/_table_liist_value.html.erb" />
         <option value="$PROJECT_DIR$/app/views/dolar/_form_date.html.erb" />
@@ -103,7 +116,11 @@
         <option value="$PROJECT_DIR$/app/views/dolar/get_dolar_values.html.erb" />
         <option value="$PROJECT_DIR$/app/views/dolar/_graph_dolar.html.erb" />
         <option value="$PROJECT_DIR$/app/views/dolar/_table_list_dolar_value.html.erb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/app/views/dolar/_form_range_date.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/dolar_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/dolar/_table_max_min_dolar_value.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/dolar.rb" />
         <option value="$PROJECT_DIR$/app/views/dolar/accion_a_realizar.html.erb" />
       </list>
     </option>
@@ -318,7 +335,7 @@
       <updated>1523996336346</updated>
       <workItem from="1523996337791" duration="34562000" />
       <workItem from="1524035943211" duration="1727000" />
-      <workItem from="1524060099416" duration="2580000" />
+      <workItem from="1524060099416" duration="5298000" />
     </task>
     <task id="LOCAL-00001" summary="Commit inicial Desafio Cumplo">
       <created>1523996470055</created>
@@ -331,7 +348,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38869000" />
+    <option name="totallyTimeSpent" value="41587000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="824" extended-state="6" />
@@ -621,14 +638,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/tmc.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -649,14 +658,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/dolar.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="78" column="3" lean-forward="false" selection-start-line="78" selection-start-column="3" selection-end-line="78" selection-end-column="3" />
           <folding />
         </state>
       </provider>
@@ -701,26 +702,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/dolar/_form_range_date.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/dolar/_table_liist_value.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="31" lean-forward="false" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/dolar/_table_max_min_dolar_value.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="8" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -757,18 +742,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/dolar/_form_range_date.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="3" lean-forward="false" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/dolar/_table_max_min_dolar_value.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/dolar_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="29" column="37" lean-forward="false" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
+        <state relative-caret-position="345">
+          <caret line="28" column="48" lean-forward="false" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/dolar.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="49" column="55" lean-forward="true" selection-start-line="49" selection-start-column="55" selection-end-line="49" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/dolar/accion_a_realizar.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+        <state relative-caret-position="360">
+          <caret line="24" column="89" lean-forward="true" selection-start-line="24" selection-start-column="89" selection-end-line="24" selection-end-column="89" />
           <folding />
         </state>
       </provider>

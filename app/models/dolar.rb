@@ -40,10 +40,11 @@ class Dolar < ApplicationRecord
 
   end
   def self.generate_dashboard_value(json_list_value)
+
     count=0
     listaDolar=[]
     listaIndices=[]
-    if(json_list_value.empty? && json_list_value.size>=1)
+    if(!json_list_value.empty? || json_list_value.size>=1)
       json_list_value['Dolares'].each do |dolar_response|
         dolar = Dolar.new
         #dolar.fecha_consulta = dolar_response['Fecha']
@@ -52,12 +53,15 @@ class Dolar < ApplicationRecord
         #listaDolar[count]=[dolar_response['Fecha'], dolar_response['Valor']]
         #count=count+1
         #dolar.save
-        papita=listaDolar.map{|e| e[1]}
+        listaDolar=listaDolar.map{|e| e[1]}
 
 
-        promedioValores=promedio(papita)
-        listaIndices=[["Mínimo", papita.min],["Máximo",papita.max],["Promedio",promedio(papita)] ]
+        listaIndices=[["Mínimo", listaDolar.min],["Máximo",listaDolar.max],["Promedio",promedio(listaDolar)] ]
+
       end
+    else
+
+      listaIndices=[["Mínimo", ""],["Máximo",""],["Promedio",""] ]
     end
     @result=listaIndices
   end

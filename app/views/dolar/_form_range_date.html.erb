@@ -1,11 +1,13 @@
-<%= form_tag({controller: "dolar", action: "accion_a_realizar" }, method: "post") do %>
-  <div class="field">
-    <input id="fecha_inicio" name="fecha_inicio" type="date" value="" /><br>
-    <input id="fecha_final" name="fecha_final" type="date"  value="" /><br>
-
-    <%= label_tag(:q, "Search for:") %>
-    <%= text_field_tag(:q) %>
-    <%= submit_tag("Search") %>
-    datepicker
+ <div class="card" >
+    <div class="card-body">
+      <h5 class="card-title"><%= @titulo %></h5>
+      <p class="card-text">Selecione un rango de fechas</p>
+      <%= form_tag({controller: "dolar", action: "accion_a_realizar" }, method: "post") do %>
+        <div class="field">
+          <input id="fecha_inicio" name="fecha_inicio" type="date" placeholder="Rango inicial" />
+          <input id="fecha_final" name="fecha_final" type="date"  placeholder="Rango final" />
+          <%= submit_tag("Buscar" , class: "btn btn-primary") %>
+        </div>
+      <% end %>
+    </div>
   </div>
-<% end %>

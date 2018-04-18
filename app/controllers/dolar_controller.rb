@@ -14,6 +14,7 @@ class DolarController < ApplicationController
   end
 
   def get_dolar_values
+    @titulo="Dolar"
   end
 
   def get tmc_values
@@ -21,11 +22,11 @@ class DolarController < ApplicationController
   end
 
   def accion_a_realizar
-
+    @titulo="Dolar"
     fecha_inicio_format= params[:fecha_inicio]
     fecha_final_format= params[:fecha_final]
     @result = Dolar.get_api_value(fecha_inicio_format, fecha_final_format)
-    @papita=Dolar.generate_dashboard_value(@result)
+    @data_table_max_min_dolar_value=Dolar.generate_dashboard_value(@result)
     @tweets_count=Dolar.data_table(@result)
     @fecha_inicio=fecha_inicio_format
     @fecha_final=fecha_final_format
