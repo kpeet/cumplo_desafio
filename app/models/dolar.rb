@@ -12,10 +12,10 @@ class Dolar < ApplicationRecord
       fecha_final=fecha_final.split("-")[0]+"/"+ fecha_final.split("-")[1]
       indicador="dolar"
       #indicador="uf"
-      #request_uri = "https://api.sbif.cl/api-sbifv3/recursos_api/"+indicador+"/periodo/"+fecha_inicio+"/"+fecha_final+"?apikey=b8124793da9ca97350a3be40583dd49e1c07e51c&formato=json"
-      #buffer = open(request_uri).read
-      @result = JSON.parse("{}")
-      #@result = JSON.parse(buffer)
+      request_uri = "https://api.sbif.cl/api-sbifv3/recursos_api/"+indicador+"/periodo/"+fecha_inicio+"/"+fecha_final+"?apikey=b8124793da9ca97350a3be40583dd49e1c07e51c&formato=json"
+      buffer = open(request_uri).read
+      #@result = JSON.parse("{}")
+      @result = JSON.parse(buffer)
     else
       @result = JSON.parse("{}")
     end
