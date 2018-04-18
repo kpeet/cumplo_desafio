@@ -85,9 +85,48 @@ class Tmc < ApplicationRecord
         #dolar.save
       end
     end
-    @result =listaDolar.sort_by{|obj| obj.tipo}
+
+    tipoTmcFlag=nil
+    listaAgrupadaPorTipo=[]
+    tmc_convertido={}
+    listaTmc_convertido=[]
+    tmc_desc=[]
+    tmcMaximo=0
+    flag_init=1
 
 
+
+
+    listaAgrupadaPorTipo=listaDolar.sort_by{|obj| obj[:tipo] }
+
+    listTmcMaximo=[]
+    listaAgrupadaPorTipo.each do |tmc_desc|
+
+      if(tmc_desc.tipo != tipoTmcFlag )
+
+        tmc_convertido[:titulo]=tmc_desc.titulo
+        tmc_convertido[:subtitulo]=tmc_desc.subtitulo
+        tmc_convertido[:tipo]=tmc_desc.tipo
+        tmc_convertido[:valorMax]=0
+
+        tipoTmcFlag=tmc_desc.tipo
+
+      else
+
+
+
+
+
+      end
+
+
+
+
+      listaTmc_convertido << tmc_convertido
+      tmc_convertido={}
+    end
+
+    @result=listaTmc_convertido
   end
 
 end

@@ -131,24 +131,20 @@
         <tr>
           <th scope="col">Titulo  </th>
           <th scope="col">Subtitulo  </th>
-          <th scope="col">Tipo  </th>
-          <th scope="col">Fecha  </th>
-          <th scope="col">Valor  </th>
+          <th scope="col">Valor máximo  </th>
         </tr>
         </thead>
 
         <tbody>
         <% if(@result.size>=1) %>
-          <% @result.each do |dolar_response|%>
-            <tr>
+          <% @result.each do |tmc_data |%>
+        <tr>
+          <td><%=  tmc_data[:titulo] %></td>
+          <td><%=  tmc_data[:subtitulo] %></td>
+          <td><%=  tmc_data[:valorMax] %></td>
+        </tr>
 
-              <td ><%=  dolar_response.tipo %> </td>
-              <td ><%= dolar_response.subtitulo%></td>
-              <td <%= dolar_response.tipo%></td>
-              <td ><%= dolar_response.fecha %></td>
-              <td ><%= dolar_response.valor %></td>
 
-            </tr>
           <% end %>
         <%end %>
         </tbody>
