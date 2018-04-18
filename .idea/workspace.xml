@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b5d65737-f487-49bb-8331-4a9eb0bdd638" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change beforePath="$PROJECT_DIR$/app/models/tmc.rb" afterPath="$PROJECT_DIR$/app/models/tmc.rb" />
-      <change beforePath="$PROJECT_DIR$/app/views/tmc/show_result.html.erb" afterPath="$PROJECT_DIR$/app/views/tmc/show_result.html.erb" />
-    </list>
+    <list default="true" id="b5d65737-f487-49bb-8331-4a9eb0bdd638" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -373,7 +367,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1523996336346</updated>
-      <workItem from="1523996337791" duration="34562000" />
+      <workItem from="1523996337791" duration="34714000" />
     </task>
     <task id="LOCAL-00001" summary="Commit inicial Desafio Cumplo">
       <created>1523996470055</created>
@@ -386,7 +380,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34562000" />
+    <option name="totallyTimeSpent" value="34714000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1470" height="824" extended-state="0" />
