@@ -1,0 +1,29 @@
+<div class="col-lg-8">
+
+  <div class="form-group">
+    <label for="exampleSelect2">Example multiple select</label>
+    <table class="table table-fixed">
+      <thead class="thead-light">
+      <tr>
+        <th scope="col">Valor  </th>
+        <th scope="col">Fecha  </th>
+      </tr>
+      </thead>
+      <tbody>
+      <% if(@result.size>=1) %>
+        <% @result['Dolares'].each do |dolar_response|%>
+          <tr>
+
+            <td class="col-xs-4"><%=  dolar_response['Valor'] %> </td>
+            <td class="col-xs-4"><%= dolar_response['Fecha'] %></td>
+
+          </tr>
+        <% end %>
+      <%end %>
+      </tbody>
+
+    </table>
+
+
+  </div>
+</div>
