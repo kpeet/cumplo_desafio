@@ -15,10 +15,10 @@
       <tbody>
 
 
-      <% if(!@tweets_count.empty?)
+      <% if(!@tmc_info.empty?)
        lista_para_grafico=[]
       %>
-        <% @tweets_count.each do | tipo_tmc, lista_valores ,maximo, subtitulo, titulo|
+        <% @tmc_info.each do | tipo_tmc, lista_valores ,maximo, subtitulo, titulo|
           lista_para_grafico << {:name => tipo_tmc, :data =>lista_valores}
 
             %>
@@ -26,16 +26,15 @@
           <tr>
             <td width="60%">
               <ul>
-                <li>Id: <%=  tipo_tmc %> <br><%=  titulo %> </li>
+                <li>Id: <%=  tipo_tmc %> <%=  titulo %> </li>
 
                 <ul>
                   <li><%=  subtitulo %></li>
                 </ul>
               </ul>
 
-
             </td>
-            <td width="40%">Máximo valor<%=  maximo%></td>
+            <td width="40%">Valor Máximo: <%=  maximo %></td>
           </tr>
 
 
