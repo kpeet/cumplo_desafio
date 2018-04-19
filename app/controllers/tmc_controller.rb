@@ -17,12 +17,12 @@ class TmcController < ApplicationController
 
     @requestApi=Tmc.get_api_value(fecha_inicio_format, fecha_final_format)
 
-    Tmc.save_json_tmc(@requestApi)
+    #Tmc.save_json_tmc(@requestApi)
 
-    if(fecha_final_format=='' || fecha_inicio_format=='')
+    if( (fecha_final_format=='' || fecha_inicio_format=='') || (fecha_final_format <  fecha_inicio_format))
       @tmc_info=[]
     else
-      @tmc_info = Tmc.get_info_for_table(fecha_inicio_format, fecha_final_format)
+      @tmc_info = Tmc.prepare_date_for_table(@requestApi,fecha_inicio_format, fecha_final_format)
       @fecha_inicio=fecha_inicio_format
       @fecha_final=fecha_final_format
     end

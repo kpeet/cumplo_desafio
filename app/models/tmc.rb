@@ -5,6 +5,56 @@ require 'uri'
 
 class Tmc < ApplicationRecord
 
+  def self.prepare_date_for_table(listaTMCValor,fecha_inicio_format, fecha_final_format)
+    if( listaTMCValor.size >= 1)
+      tiposTMC=[]
+      tmcList=[]
+      lista_datos_tipo=[]
+      lista_id_tipos=[]
+      lista_id_tipos_fecha=[]
+      valores=[]
+      listaTMCValor['TMCs'].each do |tmc_response|
+
+
+        if(!lista_id_tipos.include? [tmc_response['Tipo']])
+          lista_id_tipos << [tmc_response['Tipo']]
+
+
+        end
+        tiposTMC << [tmc_response['SubTitulo'],tmc_response['Titulo'],tmc_response['Tipo']]
+        tmcList << [tmc_response['Fecha'],tmc_response['Valor'],tmc_response['Tipo']]
+
+      end
+      tiposTMC=tiposTMC.uniq
+      tiposTMC.each do |tipos|
+       if(!lista_id_tipos.include? tipos[2])
+          listaValoresTmc=[]
+          listaValoresFechaTmc=[]
+
+          valores=[]
+          tmcList.each do |tmcs|
+            if(tmcs[2]==tipos[2]  )
+              valores << tmcs[1]
+              listaValoresFechaTmc << [ tmcs[1], tmcs[0]]
+
+            end
+          end
+              listaValoresTmc << valores
+
+
+
+
+          lista_datos_tipo << [tipos[2],listaValoresFechaTmc,valores.max, tipos[0], tipos[1]]
+
+        end
+
+      end
+
+    end
+    @tweets_count=lista_datos_tipo
+  end
+
+
 
   def self.get_info_for_table(fecha_inicio_format, fecha_final_format)
       @result=[]
