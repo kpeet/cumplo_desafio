@@ -10,12 +10,12 @@
       </tr>
       </thead>
       <tbody>
-      <% if(@result.size>=1) %>
-        <% @result['Dolares'].each do |dolar_response|%>
+      <% if(@data_bock.size>=1) %>
+        <% @data_bock.each do |dolar_response|%>
           <tr>
 
-            <td class="col-xs-4"><%=  dolar_response['Valor'] %> </td>
-            <td class="col-xs-4"><%= dolar_response['Fecha'] %></td>
+            <td class="col-xs-4"><%=  dolar_response[0] %> </td>
+            <td class="col-xs-4"><%= dolar_response[1] %></td>
 
           </tr>
         <% end %>

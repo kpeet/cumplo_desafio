@@ -14,11 +14,11 @@ class UfController < ApplicationController
     fecha_final_format= params[:fecha_final]
     @result = Uf.get_api_value(fecha_inicio_format, fecha_final_format)
     if(@result.empty?)
-      @data_table_max_min_dolar_value=[]
       @tweets_count=[]
     else
-      @data_table_max_min_dolar_value=Uf.generate_dashboard_value(@result)
-      @tweets_count=Uf.data_table(@result)
+      @data_table_max_min_dolar_value=Uf.generate_dashboard_value(@result,fecha_inicio_format, fecha_final_format)
+      @tweets_count=Uf.data_table(@result,fecha_inicio_format, fecha_final_format)
+      @data_bock=Uf.data_bock(@result,fecha_inicio_format, fecha_final_format)
     end
 
     @fecha_inicio=fecha_inicio_format

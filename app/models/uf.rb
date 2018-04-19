@@ -15,25 +15,23 @@ class Uf < ApplicationRecord
     end
   end
 
-  def self.data_table(listaUFValor)
+  def self.data_table(listaUFValor,fecha_inicio_format, fecha_final_format)
     count=0
     listaUF=[]
     if( listaUFValor.size>=1)
       listaUFValor['UFs'].each do |uf_response|
-        #uf = Uf.new
-        #dolar.fecha_consulta = dolar_response['Fecha']
-        #dolar.valor_en_peso = dolar_response['Valor']
-        listaUF << [uf_response['Fecha'], uf_response['Valor']]
-        #listaDolar[count]=[dolar_response['Fecha'], dolar_response['Valor']]
-        #count=count+1
-        #dolar.save
+        if(uf_response['Fecha'] >= fecha_inicio_format && uf_response['Fecha'] <= fecha_final_format  )
+
+          listaUF << [uf_response['Fecha'], uf_response['Valor']]
+
+        end
       end
     end
     @result =listaUF
 
 
   end
-  def self.generate_dashboard_value(json_list_value)
+  def self.generate_dashboard_value(json_list_value,fecha_inicio_format, fecha_final_format)
 
     count=0
     listaUF=[]
@@ -41,18 +39,16 @@ class Uf < ApplicationRecord
     listaIndices=[]
     if(!json_list_value.empty? && !json_list_value['UFs'].empty?)
       json_list_value['UFs'].each do |uf_response|
-        #uf = Uf.new
-        #dolar.fecha_consulta = dolar_response['Fecha']
-        #dolar.valor_en_peso = dolar_response['Valor']
-        listaUF << [uf_response['Fecha'], uf_response['Valor']]
-        #listaDolar[count]=[dolar_response['Fecha'], dolar_response['Valor']]
-        #count=count+1
-        #dolar.save
-        listaUF1=listaUF.map{|e| e[1]}
 
-        listaIndices=[["Mínimo", listaUF1.min],["Máximo",listaUF1.max],["Promedio",promedio(listaUF1)] ]
+        if(uf_response['Fecha'] >= fecha_inicio_format && uf_response['Fecha'] <= fecha_final_format  )
+
+          listaUF << [uf_response['Fecha'], uf_response['Valor']]
+          listaUF1 << uf_response['Valor']
+        end
 
       end
+
+      listaIndices=[["Mínimo", listaUF1.min],["Máximo",listaUF1.max],["Promedio",promedio(listaUF1)] ]
 
     else
 
@@ -64,16 +60,37 @@ class Uf < ApplicationRecord
   def self.promedio(listValores)
 
     sumaDeValores=0
-    count=0
+    count=0.0
     listValores.each do |valor|
-      sumaDeValores=sumaDeValores+valor.to_i
+      valor_flotante=valor.to_f
+      sumaDeValores=sumaDeValores+valor_flotante
       count=count+1
     end
     if(count <= 0)
       @promedio=0
     else
-      @promedio=sumaDeValores/count
+      @promedio=(sumaDeValores/count).to_f
     end
+  end
+
+  def self.data_bock(listaUfValor,fecha_inicio_format, fecha_final_format)
+    count=0
+    listaDolar=[]
+    if( listaUfValor.size>=1)
+      listaUfValor['UFs'].each do |uf_response|
+        #dolar.fecha_consulta = dolar_response['Fecha']
+        #dolar.valor_en_peso = dolar_response['Valor']
+        #
+        if(uf_response['Fecha'] >= fecha_inicio_format && uf_response['Fecha'] <= fecha_final_format  )
+          listaDolar << [uf_response['Fecha'], uf_response['Valor']]
+        end
+        #count=count+1
+        #dolar.save
+      end
+    end
+    @result =listaDolar
+
+
   end
 
 end

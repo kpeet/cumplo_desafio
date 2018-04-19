@@ -74,6 +74,8 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
+    date_picker (0.0.9)
+      rails (>= 4.0.3)
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.23)
@@ -208,6 +210,7 @@ DEPENDENCIES
   chartkick
   chromedriver-helper
   coffee-rails (~> 4.2)
+  date_picker
   jbuilder (~> 2.5)
   jquery-ui-rails
   json

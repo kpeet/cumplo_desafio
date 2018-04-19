@@ -10,12 +10,12 @@
       </tr>
       </thead>
       <tbody>
-      <% if(@result.size>=1) %>
-        <% @result['UFs'].each do |uf_response|%>
+      <% if(@data_bock.size>=1) %>
+        <% @data_bock.each do |uf_response|%>
           <tr>
 
-            <td class="col-xs-4"><%=  uf_response['Valor'] %> </td>
-            <td class="col-xs-4"><%= uf_response['Fecha'] %></td>
+            <td class="col-xs-4"><%=  uf_response[0] %> </td>
+            <td class="col-xs-4"><%= uf_response[1] %></td>
 
           </tr>
         <% end %>

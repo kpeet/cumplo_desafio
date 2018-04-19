@@ -14,23 +14,24 @@ class Dolar < ApplicationRecord
       #indicador="uf"
       request_uri = "https://api.sbif.cl/api-sbifv3/recursos_api/"+indicador+"/periodo/"+fecha_inicio+"/"+fecha_final+"?apikey=b8124793da9ca97350a3be40583dd49e1c07e51c&formato=json"
       buffer = open(request_uri).read
-      #@result = JSON.parse("{}")
       @result = JSON.parse(buffer)
     else
       @result = JSON.parse("{}")
     end
   end
 
-  def self.data_table(listaDolarValor)
+  def self.data_table(listaDolarValor,fecha_inicio_format, fecha_final_format)
     count=0
     listaDolar=[]
     if( listaDolarValor.size>=1)
       listaDolarValor['Dolares'].each do |dolar_response|
-        dolar = Dolar.new
         #dolar.fecha_consulta = dolar_response['Fecha']
         #dolar.valor_en_peso = dolar_response['Valor']
-        listaDolar << [dolar_response['Fecha'], dolar_response['Valor']]
+        #
+        if(dolar_response['Fecha'] >= fecha_inicio_format && dolar_response['Fecha'] <= fecha_final_format  )
+          listaDolar << [dolar_response['Fecha'], dolar_response['Valor']]
         #listaDolar[count]=[dolar_response['Fecha'], dolar_response['Valor']]
+        end
         #count=count+1
         #dolar.save
       end
@@ -39,7 +40,27 @@ class Dolar < ApplicationRecord
 
 
   end
-  def self.generate_dashboard_value(json_list_value)
+  def self.data_bock(listaDolarValor,fecha_inicio_format, fecha_final_format)
+    count=0
+    listaDolar=[]
+    if( listaDolarValor.size>=1)
+      listaDolarValor['Dolares'].each do |dolar_response|
+        #dolar.fecha_consulta = dolar_response['Fecha']
+        #dolar.valor_en_peso = dolar_response['Valor']
+        #
+        if(dolar_response['Fecha'] >= fecha_inicio_format && dolar_response['Fecha'] <= fecha_final_format  )
+          listaDolar << [dolar_response['Fecha'], dolar_response['Valor']]
+          #listaDolar[count]=[dolar_response['Fecha'], dolar_response['Valor']]
+        end
+        #count=count+1
+        #dolar.save
+      end
+    end
+    @result =listaDolar
+
+
+  end
+  def self.generate_dashboard_value(json_list_value,fecha_inicio_format, fecha_final_format)
 
     count=0
     listaDolar=[]
@@ -47,19 +68,18 @@ class Dolar < ApplicationRecord
     listaIndices=[]
     if(!json_list_value.empty? && !json_list_value['Dolares'].empty?)
       json_list_value['Dolares'].each do |dolar_response|
-        dolar = Dolar.new
-        #dolar.fecha_consulta = dolar_response['Fecha']
-        #dolar.valor_en_peso = dolar_response['Valor']
-        listaDolar << [dolar_response['Fecha'], dolar_response['Valor']]
-        #listaDolar[count]=[dolar_response['Fecha'], dolar_response['Valor']]
-        #count=count+1
-        #dolar.save
-        listaDola1r=listaDolar.map{|e| e[1]}
 
+        if(dolar_response['Fecha'] >= fecha_inicio_format && dolar_response['Fecha'] <= fecha_final_format  )
 
-        listaIndices=[["Mínimo", listaDola1r.min],["Máximo",listaDola1r.max],["Promedio",promedio(listaDola1r)] ]
+          listaDolar << [dolar_response['Fecha'], dolar_response['Valor']]
+          listaDola1r << dolar_response['Valor']
+        end
+
 
       end
+
+      listaIndices=[["Mínimo", listaDola1r.min],["Máximo",listaDola1r.max],["Promedio",promedio(listaDola1r)] ]
+
     else
 
       listaIndices=[["Mínimo", ""],["Máximo",""],["Promedio",""] ]
@@ -70,15 +90,16 @@ class Dolar < ApplicationRecord
   def self.promedio(listValores)
 
     sumaDeValores=0
-    count=0
+    count=0.0
     listValores.each do |valor|
-      sumaDeValores=sumaDeValores+valor.to_i
+      valor_flotante=valor.to_f
+      sumaDeValores=sumaDeValores+valor_flotante
       count=count+1
     end
     if(count <= 0)
       @promedio=0
     else
-      @promedio=sumaDeValores/count
+      @promedio=(sumaDeValores/count).to_f
     end
   end
 end

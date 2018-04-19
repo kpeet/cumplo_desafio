@@ -5,10 +5,34 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <link rel="stylesheet" href="https://bootswatch.com/4/minty/bootstrap.css" media="screen">
   <link rel="stylesheet" href="https://bootswatch.com/_assets/css/custom.min.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
   <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+  <script  type="text/javascript">
+      $(document).ready(function(){
+
+          $('#example1').calendar();
+
+          $(".datepicker").semanticCalendar({
+              // No options is mandatories
+              locale: 'pt-br',
+              name: 'calendar',
+              minDate: moment().subtract(6, "months"),
+              maxDate: moment(),
+              selectedDate: moment()
+          }).on("semanticCalendar:change", function(e, date){
+              // Calendar change event
+              console.log(date);
+          });
+      });
+  </script>
 
   <style class="cp-pen-styles">
 
@@ -33,8 +57,6 @@
       border-color: #e67e22;
     }
   </style>
-  <script>
-      $( ".datepicker" ).datepicker();
-  </script>
+
 
 </head>
