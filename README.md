@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Trabajo entregado para cumplir con el desafío propuesta por la empresa Cumplo
 
-Things you may want to cover:
+Creador:
+  * Kenneth Ronald Peet
+  * kpeet@inf.utfsm.cl
 
-* Ruby version
+Objetivos de trabajo:
 
-* System dependencies
+*Mostrar valores de Uf y Dolares para un rango específico de fechas
 
-* Configuration
+*Utilizar la API de SBIF para obtener indicadores de Uf, Dolar, TMC.
 
-* Database creation
+*Utilización del Framework Ruby on Rails
 
-* Database initialization
+*Acceso a la aplicación funcional https://fierce-fjord-79337.herokuapp.com/tmc/show_result
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
