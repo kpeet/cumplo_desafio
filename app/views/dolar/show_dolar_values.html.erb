@@ -1,0 +1,41 @@
+<%= render 'head_meta' %>
+
+<body>
+
+<%= render 'header_body' %>
+
+
+<div class="container">
+
+  <%= render 'form_range_date' %>
+
+  <% if(!@result.empty?) %>
+
+  <table class="col-lg-12">
+    <tr>
+      <td width="100%"> <%= render 'table_max_min_dolar_value' %></td>
+    </tr>
+  </table>
+
+  <table class="col-lg-12">
+    <tr>
+      <td width="60%" valign="top"><%= render 'graph_dolar' %></td>
+      <td width="40%"> <%= render 'table_list_dolar_value' %></td>
+    </tr>
+  </table>
+    <% end %>
+
+
+
+
+
+
+
+ <%= render 'footer' %>
+
+</div>
+
+
+
+
+</body>

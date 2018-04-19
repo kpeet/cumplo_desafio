@@ -8,7 +8,7 @@ class UfController < ApplicationController
   end
 
 
-  def accion_a_realizar
+  def show_uf_values
     @titulo="UF"
     fecha_inicio_format= params[:fecha_inicio]
     fecha_final_format= params[:fecha_final]

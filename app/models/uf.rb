@@ -69,7 +69,7 @@ class Uf < ApplicationRecord
     if(count <= 0)
       @promedio=0
     else
-      @promedio=(sumaDeValores/count).to_f
+      @promedio=(sumaDeValores/count).to_f.round(2)
     end
   end
 

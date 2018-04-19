@@ -8,13 +8,12 @@ class Dolar < ApplicationRecord
     if(!fecha_inicio.empty? && !fecha_final.empty?)
 
 
-      fecha_inicio=fecha_inicio.split("-")[0]+"/"+ fecha_inicio.split("-")[1]
-      fecha_final=fecha_final.split("-")[0]+"/"+ fecha_final.split("-")[1]
+      fecha_inicio=fecha_inicio.split("-")[0]+"/"+fecha_inicio.split("-")[1]
+      fecha_final=fecha_final.split("-")[0]+"/"+fecha_final.split("-")[1]
       indicador="dolar"
-      #indicador="uf"
       request_uri = "https://api.sbif.cl/api-sbifv3/recursos_api/"+indicador+"/periodo/"+fecha_inicio+"/"+fecha_final+"?apikey=b8124793da9ca97350a3be40583dd49e1c07e51c&formato=json"
       buffer = open(request_uri).read
-      @result = JSON.parse(buffer)
+      @result =JSON.parse(buffer)
     else
       @result = JSON.parse("{}")
     end
@@ -25,18 +24,14 @@ class Dolar < ApplicationRecord
     listaDolar=[]
     if( listaDolarValor.size>=1)
       listaDolarValor['Dolares'].each do |dolar_response|
-        #dolar.fecha_consulta = dolar_response['Fecha']
-        #dolar.valor_en_peso = dolar_response['Valor']
-        #
+
         if(dolar_response['Fecha'] >= fecha_inicio_format && dolar_response['Fecha'] <= fecha_final_format  )
           listaDolar << [dolar_response['Fecha'], dolar_response['Valor']]
-        #listaDolar[count]=[dolar_response['Fecha'], dolar_response['Valor']]
+
         end
-        #count=count+1
-        #dolar.save
       end
     end
-    @result =listaDolar
+    @result =listaDolar.sort_by{ |hsh| -hsh[1]}
 
 
   end
@@ -45,15 +40,10 @@ class Dolar < ApplicationRecord
     listaDolar=[]
     if( listaDolarValor.size>=1)
       listaDolarValor['Dolares'].each do |dolar_response|
-        #dolar.fecha_consulta = dolar_response['Fecha']
-        #dolar.valor_en_peso = dolar_response['Valor']
-        #
         if(dolar_response['Fecha'] >= fecha_inicio_format && dolar_response['Fecha'] <= fecha_final_format  )
           listaDolar << [dolar_response['Fecha'], dolar_response['Valor']]
-          #listaDolar[count]=[dolar_response['Fecha'], dolar_response['Valor']]
+
         end
-        #count=count+1
-        #dolar.save
       end
     end
     @result =listaDolar
@@ -99,7 +89,7 @@ class Dolar < ApplicationRecord
     if(count <= 0)
       @promedio=0
     else
-      @promedio=(sumaDeValores/count).to_f
+      @promedio=(sumaDeValores/count).to_f.round(2)
     end
   end
 end

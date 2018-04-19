@@ -4,24 +4,16 @@ require 'net/https'
 require 'uri'
 
 class DolarController < ApplicationController
-  include CumploHelper
 
   def index
   end
 
-  def get_uf_values
-    @uf=Uf.get_api_value
-  end
 
   def get_dolar_values
     @titulo="Dolar"
   end
 
-  def get tmc_values
-
-  end
-
-  def accion_a_realizar
+  def show_dolar_values
     @titulo="Dolar"
     fecha_inicio_format= params[:fecha_inicio]
     fecha_final_format= params[:fecha_final]

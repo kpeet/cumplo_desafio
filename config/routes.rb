@@ -6,15 +6,15 @@ Rails.application.routes.draw do
 
   get 'dolar/index'
   get 'dolar/get_dolar_values'
-  post 'dolar/accion_a_realizar'
+  post 'dolar/show_dolar_values'
 
-  get "dolar/:accion_a_realizar" => "dolar#get_dolar_values", :as => :postdolar
-  get "uf/:accion_a_realizar" => "uf#get_uf_values", :as => :postuf
+  get "dolar/:show_dolar_values" => "dolar#get_dolar_values", :as => :postdolar
+  get "uf/:show_uf_values" => "uf#get_uf_values", :as => :postuf
   get "tmc/:show_result" => "tmc#get_tmc_values", :as => :posttmc
 
   get 'uf/index'
   get 'uf/get_uf_values'
-  post 'uf/accion_a_realizar'
+  post 'uf/show_uf_values'
 
   post 'tmc/show_result'
   get 'tmc/get_tmc_values'

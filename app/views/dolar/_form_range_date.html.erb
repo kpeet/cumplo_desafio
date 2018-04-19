@@ -2,10 +2,10 @@
     <div class="card-body">
       <h5 class="card-title"><%= @titulo %></h5>
       <p class="card-text">Selecione un rango de fechas</p>
-      <%= form_tag({controller: "dolar", action: "accion_a_realizar" }, method: "post") do %>
+      <%= form_tag({controller: "dolar", action: "show_dolar_values" }, method: "post") do %>
         <div class="field">
-          <input id="fecha_inicio" class="datepicker" name="fecha_inicio" type="date" placeholder="Rango inicial" />
-          <input id="fecha_final" name="fecha_final" type="date"  placeholder="Rango final" />
+          <input id="fecha_inicio" class="datepicker" type="date" name="fecha_inicio"  placeholder="Rango inicial" />
+          <input id="fecha_final" class="datepicker" type="date"   name="fecha_final"  placeholder="Rango final" />
           <%= submit_tag("Buscar" , class: "btn btn-primary") %>
         </div>
       <% end %>
