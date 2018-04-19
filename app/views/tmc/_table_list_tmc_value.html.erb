@@ -2,30 +2,32 @@
 <div class="col-lg-12">
 
   <div class="form-group">
-    <label for="exampleSelect2">Example multiple select</label>
     <table class="table ">
 
       <thead class="thead-light">
       <tr>
-        <th> Indices TMC Máximos para las FECHAS FALTAN  </th>
+        <th> Table de Índices con TMC Máximos para las fechas <%= @fecha_final+" - "+@fecha_inicio  %>  </th>
+        <th></th>
 
       </tr>
       </thead>
 
       <tbody>
 
+
       <% if(!@tweets_count.empty?)
        lista_para_grafico=[]
-      %>s
+      %>
         <% @tweets_count.each do | tipo_tmc, lista_valores ,maximo, subtitulo, titulo|
-          lista_para_grafico=lista_valores
+          lista_para_grafico << {:name => tipo_tmc, :data =>lista_valores}
 
             %>
 
           <tr>
-            <td>
+            <td width="60%">
               <ul>
-                <li><%=  titulo %> </li>
+                <li>Id: <%=  tipo_tmc %> <br><%=  titulo %> </li>
+
                 <ul>
                   <li><%=  subtitulo %></li>
                 </ul>
@@ -33,27 +35,38 @@
 
 
             </td>
-            <td><%=  maximo%></td>
+            <td width="40%">Máximo valor<%=  maximo%></td>
           </tr>
 
 
         <% end %>
       <%end %>
 
-      <div class="col-lg-12">
-        <%= bar_chart @tweets_count,
-                      title: 'Top Ten Products (By Total Quantity Purchased)',
-                      colors: ['green'],
-                      library: {
-                          tooltip: {
-                              pointFormat: 'Times Bought'
-                          }
-                      } %>
-      </div>
+
       </tbody>
 
     </table>
 
 
   </div>
+
+
 </div>
+
+<table width="100%">
+  <thead>
+  <th>
+    <label for="exampleSelect2">Tmc en función del tiempo para las fechas <%= @fecha_inicio+" - "+@fecha_final %></label>
+
+  </th>
+  </thead>
+  <tr>
+    <td>
+
+      <%= line_chart lista_para_grafico.map { |valor|
+        {name: valor[:name], data: valor[:data].map{|valor2| [valor2[1], valor2[0]] } }
+      } %>
+
+    </td>
+  </tr>
+</table>
