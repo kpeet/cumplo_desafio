@@ -1,0 +1,29 @@
+<div class="col-lg-8">
+
+  <div class="form-group">
+    <label for="exampleSelect2">Valor Dolar por Fecha</label>
+    <table class="table table-fixed">
+      <thead class="thead-light">
+      <tr>
+        <th scope="col">Valor  </th>
+        <th scope="col">Fecha  </th>
+      </tr>
+      </thead>
+      <tbody>
+      <% if(@data_bock.size>=1) %>
+        <% @data_bock.each do |dolar_response|%>
+          <tr>
+
+            <td class="col-xs-4"><%=  dolar_response[0] %> </td>
+            <td class="col-xs-4"><%= dolar_response[1] %></td>
+
+          </tr>
+        <% end %>
+      <%end %>
+      </tbody>
+
+    </table>
+
+
+  </div>
+</div>
